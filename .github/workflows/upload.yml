@@ -21,7 +21,7 @@ jobs:
         username: ${{ secrets.usuario }}
         password: ${{ secrets.psswrd }}
         server-dir: /
-        protocol: ftps
+        protocol: ftp
         port: 21
         exclude: |
           **/.git*
