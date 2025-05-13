@@ -1,0 +1,10 @@
+#hello.repy
+name = "sharktide"
+def say_hello(name) {
+    print("reStructuredPython is Awesome!")
+    return name
+}
+def say_bye(name) {
+    print(f'Bye {name}')
+}
+name |> say_hello |> say_bye

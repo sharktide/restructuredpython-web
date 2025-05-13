@@ -67,6 +67,13 @@ hljs.registerLanguage('reStructuredPython', function () {
     };
 });
 
+function git1() {
+    window.open('https://github.com/sharktide/restructuredpython');
+}
+function git2() {
+    window.open('https://github.com/sharktide/repython-vs');
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 document.querySelectorAll("pre code").forEach((block) => {
     hljs.highlightElement(block);

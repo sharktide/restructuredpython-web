@@ -143,6 +143,11 @@ nav.navbar {
     padding: 60px 20px;
     background: var(--light-blue);
 }
+.white {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+}
 
 .download button {
     font-size: 18px;
@@ -159,6 +164,20 @@ nav.navbar {
     background: #255fa9;
 }
 
+.white button {
+    font-size: 18px;
+    padding: 12px 24px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.white button:hover {
+    background: #255fa9;
+}
 .dialog {
 display: none;
 position: fixed;
@@ -221,11 +240,26 @@ z-index: 1000;
     from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
 }
-code {
-      background-color: #1e1e1e;
-}
 .hljs-keyword { color: #ff7b72; font-weight: normal;}  /* Keywords */
 .hljs-string { color: #79c0ff; }  /* Strings */
 .hljs-comment { color: #8b949e; font-style: italic; } /* Comments */
 .hljs-number { color: #ffa657; }  /* Numbers */
 .hljs-function { color: #d2a8ff; }  /* Function names */
+
+pre .code-container {
+    overflow: auto
+}
+
+.reveal pre code, .hljs {
+    background-color: #ffffff !important;
+    border-radius: 10px;
+    padding: 5px;
+    overflow: auto;
+    max-height: 400px;
+    word-wrap: normal;
+}
+
+#hero-right {
+    border-color: #255fa9;
+    border-width: 3px;
+}
