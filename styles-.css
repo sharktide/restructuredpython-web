@@ -1,0 +1,231 @@
+:root {
+    --blue: #3178c6;
+    --light-blue: #e3f2fd;
+    --dark-text: #1a1a1a;
+    --gray: #f5f5f5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, Inter, sans-serif;
+    background: white;
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--dark-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 40px;
+    background: var(--light-blue);
+    flex-wrap: wrap;
+}
+
+.hero-left {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+}
+
+.hero-left h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--blue);
+}
+
+.hero-left p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background 0.3s;
+}
+
+.hero-buttons a.secondary {
+    background: white;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+
+.hero-buttons a:hover {
+    background: #255fa9;
+}
+
+.hero-buttons a.secondary:hover {
+    background: var(--blue);
+    color: white;
+}
+
+.hero-right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-right img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.features {
+    display: flex;
+    gap: 20px;
+    padding: 60px 40px;
+    background: white;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    flex: 1 1 280px;
+    background: var(--gray);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.download {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--light-blue);
+}
+
+.download button {
+    font-size: 18px;
+    padding: 12px 24px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.download button:hover {
+    background: #255fa9;
+}
+
+.dialog {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #1e1e1e;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+text-align: center;
+width: 400px;
+z-index: 1000;
+}
+
+.dialog-content h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.copy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.copy-container span {
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.copy-btn, .close-btn {
+    background: #3f82c9;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.copy-btn:hover, .close-btn:hover {
+    background: #3f82c9;
+    transform: scale(1.05);
+}
+
+.download-counter {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #166e32;
+    animation: fadeInCount 0.8s ease-in-out;
+}
+
+@keyframes fadeInCount {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+code {
+      background-color: #1e1e1e;
+}
+.hljs-keyword { color: #ff7b72; font-weight: normal;}  /* Keywords */
+.hljs-string { color: #79c0ff; }  /* Strings */
+.hljs-comment { color: #8b949e; font-style: italic; } /* Comments */
+.hljs-number { color: #ffa657; }  /* Numbers */
+.hljs-function { color: #d2a8ff; }  /* Function names */
