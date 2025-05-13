@@ -20,7 +20,7 @@ jobs:
         server: ${{ secrets.servidor }}
         username: ${{ secrets.usuario }}
         password: ${{ secrets.psswrd }}
-        server-dir: /htdocs/
+        server-dir: /
         protocol: ftps
         port: 21
         exclude: |
