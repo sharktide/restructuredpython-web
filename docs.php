@@ -1,17 +1,19 @@
-<?php
-$baseUrl = "https://restructuredpython.readthedocs.io"; // ReadTheDocs URL
-
-// Get requested path after /docs
-$requestPath = str_replace("/docs", "", $_SERVER['REQUEST_URI']);
-$targetUrl = $baseUrl . $requestPath; // Append to ReadTheDocs URL
-
-// Fetch content using cURL
-$ch = curl_init($targetUrl);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-$response = curl_exec($ch);
-curl_close($ch);
-
-// Output the proxied content
-echo $response;
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestructuredPython Docs</title>
+    <script>
+        function loadDocs() {
+            let path = window.location.pathname.replace("/docs", ""); // Extract path after /docs
+            let iframeSrc = "https://restructuredpython.readthedocs.io" + path;
+            document.getElementById("docsFrame").src = iframeSrc;
+        }
+        window.onload = loadDocs;
+    </script>
+</head>
+<body>
+    <iframe id="docsFrame" width="100%" height="1000px"></iframe>
+</body>
+</html>
