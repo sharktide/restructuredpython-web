@@ -16,6 +16,6 @@
     </script>
 </head>
 <body>
-    <iframe id="docsFrame" width="100%" height="100%"></iframe>
+    <iframe id="docsFrame" width="100%" height="10000px"></iframe>
 </body>
 </html>
