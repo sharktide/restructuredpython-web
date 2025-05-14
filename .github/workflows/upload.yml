@@ -1,0 +1,29 @@
+name: AutoDeployFTPInfinityFree
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v4.1.1
+    
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.servidor }}
+        username: ${{ secrets.usuario }}
+        password: ${{ secrets.psswrd }}
+        server-dir: /restructuredpython.rf.gd/htdocs/
+        protocol: ftp
+        port: 21
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
