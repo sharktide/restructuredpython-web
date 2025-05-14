@@ -1,61 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reStructuredPython</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>reStructuredPython</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+  <link rel="stylesheet" href="styles-.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#download">Download</a></li>
-            <li><a href="#community">Community</a></li>
-        </ul>
-    </nav>
-
-    <header>
-        <h1>reStructuredPython</h1>
-        <p>Fast, efficient, and easy to learn.</p>
-        <div class="download-counter">
-          Downloads: <span id="counter">0</span>
-        </div>
-    </header>
+  <nav class="navbar">
+    <div class="logo">reStructuredPython</div>
+    <ul class="nav-links">
+      <li><a href="#github">Open Source</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="https://restructuredpython.readthedocs.io">Docs</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#community">Community</a></li>
+    </ul>
+  </nav>
     <div id="install-dialog" class="dialog">
         <div class="dialog-content">
-            <h3>Install reStructuredPython Python</h3>
+            <h3>🐍 Install via PIP</h3>
             <p>Run this command in your terminal:</p>
-            <div class="copy-container">
+            <div class="copy-container" id="copy-container">
                 <span id="install-command">pip install restructuredpython</span>
                 <button onclick="copyCommand()" class="copy-btn">📋 Copy</button>
             </div>
-            <p><a href="/download" id="other"><b>Other installation methods and releases</b></a></p>
+            <br>
             <button onclick="closeDialog()" class="close-btn">Close</button>
         </div>
     </div>
-    <section id="about" class="scroll">
-        <h2>What is reStructuredPython?</h2>
-        <p>reStructuredPython Python is a powerful superset of Python, offering enhanced features and flexibility.</p>
-        
-        <div class="links">
-            <a href="https://restructuredpython.readthedocs.io" target="_blank" class="btn">📖 Read the Docs</a>
-            <a href="https://github.com/sharktide/restructuredpython" target="_blank" class="btn">🐍 GitHub Repository</a>
-            <button onclick="openDialog()" class="btn" targget="_blank">⬇️ Install</button>
 
-        </div>
-    </section>
-    <section class="scroll">
-        <h2>Why Use It?</h2>
-        <p>Discover the features that make it unique.</p>
-    </section>
+  <section class="hero">
+    <div class="hero-left">
+      <h1>reStructuredPython</h1>
+      <p>A modern superset of Python with structure, speed, and clarity that can either run directly or compile into standard python.</p>
+      <div class="download-counter">
+          Downloads: <span id="counter">0</span>
+          <p></p>
+      </div>
+      <div class="hero-buttons">
+        <a href="#download">Install</a>
+        <a href="https://restructuredpython.readthedocs.io" target="_blank">Read the Docs</a>
+      </div>
+    </div>
+    <div class="hero-right" id="hero-right">
+      <pre class="reveal"><code class="reStructuredPython reveal">
+#hello.repy
+name = "sharktide"
+def say_hello(name) {
+    print("reStructuredPython is Awesome!")
+    return name
+}
+def say_bye(name) {
+  print(f'Bye {name}')
+}
+name |> say_hello |> say_bye
+      </code></pre>
+    </div>
+  </section>
 
-    <section class="download">
-        <h2>Download</h2>
-        <button onclick="openDialog()">Get Started</button>
-    </section>
+  <section class="features" id="features">
+    <div class="feature-card">
+      <h3>Compatibility</h3>
+      <p>Fully compatible with existing Python libraries and tools.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Structured Code</h3>
+      <p>Optional curly brackets around contrl loops similar to JavaScript for enhanced readability</p>
+    </div>
+    <div class="feature-card">
+      <h3>Performance</h3>
+      <p>Takes little storage up on the device and takes less than 2 seconds to compile</p>
+    </div>
+  </section>
+  <section class="download" id="github">
+    <h2>Always open source</h2>
+    <p>Check our our code at the official repositories:</p>
+    <br>
+    <div>
+      <button onclick="git1()">Language Repository</button>
+      <button onclick="git2()" target="_blank">VScode extension</button>
+    </div>
+  </section>
+  <section class="white" id="download">
+    <h2>Download reStructuredPython</h2>
+    <br>
+    <button onclick="openDialog()">Install via PIP</button>
+    <button onclick="window.location.href='https://github.com/sharktide/restructuredpython'">Other Downloads and versions</button>
+  </section>
+  <script src="script.js" defer></script>
 </body>
 </html>

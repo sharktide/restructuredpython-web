@@ -4,7 +4,7 @@ async function fetchDownloadCount() {
         const data = await response.json();
 
         if (data.total_downloads) {
-            animateDownloadCounter(data.total_downloads, 20);  // 60 ticks for animation
+            animateDownloadCounter(data.total_downloads, 20);
         } else {
             console.error("Unexpected data format:", data);
         }
@@ -18,19 +18,19 @@ function animateDownloadCounter(finalCount, totalTicks) {
     let currentCount = Number(counterElement.textContent);
     
     let difference = finalCount - currentCount;
-    let increment = Math.max(1, Math.ceil(difference / totalTicks));  // Dynamic step size
+    let increment = Math.max(1, Math.ceil(difference / totalTicks));
 
     let tick = 0;
     let interval = setInterval(() => {
         if (tick >= totalTicks || currentCount >= finalCount) {
             clearInterval(interval);
-            counterElement.textContent = finalCount;  // Ensure final count is accurate
+            counterElement.textContent = finalCount;
         } else {
             currentCount += increment;
             counterElement.textContent = Math.min(currentCount, finalCount);
             tick++;
         }
-    }, 50); // Runs every 50ms (~3 seconds total duration)
+    }, 50);
 }
 function openDialog() {
     document.getElementById("install-dialog").style.display = "block";
@@ -75,10 +75,9 @@ function git2() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-document.querySelectorAll("pre code").forEach((block) => {
-    hljs.highlightElement(block);
-});
+    fetchDownloadCount();
+    document.querySelectorAll("pre code").forEach((block) => {
+        hljs.highlightElement(block);
+    });
 });
 
-// Fetch count when page loads
-window.onload = fetchDownloadCount;

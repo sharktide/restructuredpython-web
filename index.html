@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-  <link rel="stylesheet" href="styles-.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav class="navbar">
@@ -78,18 +78,25 @@ name |> say_hello |> say_bye
   </section>
   <section class="download" id="github">
     <h2>Always open source</h2>
-    <p>Check our our code at the official repositories:</p>
+    <p>Check out our code at the official repositories:</p>
     <br>
     <div>
-      <button onclick="git1()">Language Repository</button>
-      <button onclick="git2()" target="_blank">VScode extension</button>
+        <a href="https://github.com/sharktide/restructuredpython">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=sharktide&repo=restructuredpython&show_owner=true" class="repo-image">
+        </a>
+        <a href="https://github.com/sharktide/repython-vs">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=sharktide&repo=repython-vs&show_owner=true" class="repo-image">
+        </a>
+                <a href="https://github.com/sharktide/restructuredpython-web">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=sharktide&repo=restructuredpython-web&show_owner=true" class="repo-image">
+        </a>
     </div>
   </section>
   <section class="white" id="download">
     <h2>Download reStructuredPython</h2>
     <br>
     <button onclick="openDialog()">Install via PIP</button>
-    <button onclick="window.location.href='https://github.com/sharktide/restructuredpython'">Other Downloads and versions</button>
+    <button onclick="window.location.href='https://github.com/sharktide/restructuredpython/releases'">Other Downloads and versions</button>
   </section>
   <script src="script.js" defer></script>
 </body>
