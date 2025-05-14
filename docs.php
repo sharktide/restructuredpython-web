@@ -6,7 +6,9 @@
     <title>RestructuredPython Docs</title>
     <script>
         function loadDocs() {
-            let path = window.location.pathname.replace("/docs", ""); // Extract path after /docs
+            let path = window.location.pathname.replace("/docs", "");
+            path = window.location.pathname.replace(".html", "");
+            path = window.location.pathname.replace(".php", "");
             let iframeSrc = "https://restructuredpython.readthedocs.io" + path;
             document.getElementById("docsFrame").src = iframeSrc;
         }
