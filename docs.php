@@ -9,13 +9,13 @@
             let path = window.location.pathname.replace("/docs", "");
             path = window.location.pathname.replace(".html", "");
             path = window.location.pathname.replace(".php", "");
-            let iframeSrc = "https://restructuredpython.readthedocs.io" + path;
+            let iframeSrc = "https://restructuredpython.readthedocs.io/en/latest" + path;
             document.getElementById("docsFrame").src = iframeSrc;
         }
         window.onload = loadDocs;
     </script>
 </head>
 <body>
-    <iframe id="docsFrame" width="100%" height="1000px"></iframe>
+    <iframe id="docsFrame" width="100%" height="100%"></iframe>
 </body>
 </html>
