@@ -9,7 +9,7 @@
             let path = window.location.pathname.replace("/docs", "");
             path = window.location.pathname.replace(".html", "");
             path = window.location.pathname.replace(".php", "");
-            let iframeSrc = "https://restructuredpython.readthedocs.io/en/latest" + path;
+            let iframeSrc = "https://restructuredpython.readthedocs.io" + path;
             document.getElementById("docsFrame").src = iframeSrc;
         }
         window.onload = loadDocs;
