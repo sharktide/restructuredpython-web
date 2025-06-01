@@ -84,8 +84,25 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links a");
 
+    // Toggle on hamburger click
     hamburger.addEventListener("click", () => {
         navLinks.classList.toggle("show");
     });
+
+    // Hide menu on link click
+    navItems.forEach(link => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove("show");
+            }
+        });
+    });
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        navLinks.classList.remove('show');
+    }
 });
