@@ -263,3 +263,66 @@ pre .code-container {
     border-color: #255fa9;
     border-width: 3px;
 }
+
+@media (max-width: 768px) {
+    nav.navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero-left, .hero-right {
+        max-width: 100%;
+        flex: unset;
+    }
+
+    .hero-left h1 {
+        font-size: 32px;
+    }
+
+    .hero-left p {
+        font-size: 16px;
+    }
+
+    .hero-buttons a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        text-align: center;
+    }
+
+    .features {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+
+    .download, .white {
+        padding: 40px 20px;
+    }
+
+    .repo-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .dialog {
+        width: 90%;
+    }
+}
