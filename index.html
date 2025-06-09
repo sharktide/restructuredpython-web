@@ -1,3 +1,17 @@
+<!-- Copyright 2025 Rihaan Meher
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +25,14 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">reStructuredPython</div>
-      
-        <!-- Hamburger Menu Button -->
+        <a href="/"><div class="logo">reStructuredPython</div></a>
+
         <button class="hamburger" aria-label="Toggle menu">
           &#9776;
         </button>
 
         <ul class="nav-links">
+            <li><a href="/playground">Playground</a></li>
             <li><a href="#github">Open Source</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="https://restructuredpython.readthedocs.io">Docs</a></li>
@@ -51,6 +65,7 @@
       <div class="hero-buttons">
         <a href="#download">Install</a>
         <a href="https://restructuredpython.readthedocs.io" target="_blank">Read the Docs</a>
+        <a href="/playground" target="_blank">Try it online --></a>
       </div>
     </div>
     <div class="hero-right" id="hero-right">
@@ -99,7 +114,12 @@ name |> say_hello |> say_bye
         </a>
     </div>
   </section>
-  <section class="white" id="download">
+  <section class="white" id="live">
+    <h1>Try an online version of restructuredpython online in your browser now with the playground.</h1>
+    <br>
+    <button onclick="window.open('/playground')">Try it now! --></button>
+  </section>
+  <section class="download" id="download">
     <h2>Download reStructuredPython</h2>
     <br>
     <div>

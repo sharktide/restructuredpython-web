@@ -1,0 +1,158 @@
+/*
+   Copyright 2025 Rihaan Meher
+   
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+:root {
+    --blue: #3178c6;
+    --light-blue: #e3f2fd;
+    --dark-text: #1a1a1a;
+    --gray: #f5f5f5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, Inter, sans-serif;
+    background: white;
+    color: var(--dark-text);
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar stays at the top */
+nav.navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Container to hold the horizontal split */
+.main-content {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    overflow: auto;
+}
+
+.left {
+    background: var(--light-blue);
+    border-right: 2px solid #ccc;
+}
+
+.right {
+    background: white;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+button {
+    background: var(--blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #255fa9;
+}.editor-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Textarea sits on top but is transparent */
+textarea#codeInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  caret-color: black;
+  background: transparent;
+  border: none;
+  resize: none;
+  font: inherit;
+  line-height: inherit;
+  padding: 10px;
+  white-space: pre-wrap;
+  overflow: auto;
+  z-index: 2;
+}
+
+/* Prevent selection inside pre */
+.highlighted-code {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 10px;
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .split {
+        width: 100%;
+        height: 50%;
+        border: none;
+    }
+
+    .left {
+        border-bottom: 2px solid #ccc;
+    }
+}
