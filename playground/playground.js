@@ -50,3 +50,29 @@ window.addEventListener("resize", () => {
     }
 });
 
+document.getElementById('codeInput').addEventListener('keydown', function(e) {
+  if (e.key == 'Tab') {
+    e.preventDefault();
+    var start = this.selectionStart;
+    var end = this.selectionEnd;
+
+    this.value = this.value.substring(0, start) +
+      "    " + this.value.substring(end);
+
+    // put caret at right position again
+    this.selectionStart =
+      this.selectionEnd = start + 4;
+  }
+});
+const copy = document.getElementById("copy")
+copy.addEventListener('click', function() {
+    navigator.clipboard.writeText(document.getElementById("output").innerText);
+    copy.innerText = "Copied!"
+    setTimeout(() => {
+        copy.innerText = "Copy Code"
+    }, 1500);  
+})
+
+document.getElementById("clear").addEventListener('click', function() {
+    document.getElementById("output").innerText = ""
+})
